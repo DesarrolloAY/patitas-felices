@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adopciones - Patitas Felices 🐾</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root { --cute-pink: #ff9a9e; --cute-rose: #fecfef; --cute-blue: #a1c4fd; --text-dark: #5d4037; }
+        body { font-family: 'Nunito', sans-serif; background-color: #fff9f9; color: var(--text-dark); padding-top: 100px; }
+        h1, h2, h3, h4, .navbar-brand { font-family: 'Fredoka One', cursive; letter-spacing: 1px; }
+
+        .navbar-custom { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); border-bottom: 3px dashed var(--cute-pink); transition: all 0.4s ease; }
+        .navbar-custom .navbar-brand { color: #ff7eb3 !important; font-size: 1.8rem; text-shadow: 2px 2px 0px var(--cute-rose); }
+        .navbar-custom .nav-link { color: var(--text-dark) !important; font-weight: 700; margin: 0 8px; border-radius: 20px; transition: all 0.3s; }
+        .navbar-custom .nav-link:hover, .navbar-custom .nav-link.active { background-color: var(--cute-blue); color: white !important; transform: scale(1.1) rotate(-3deg); }
+
+        .btn-cute { background: linear-gradient(45deg, #ff9a9e 0%, #fecfef 100%); color: var(--text-dark); border: none; border-radius: 30px; padding: 10px 25px; font-family: 'Fredoka One', cursive; font-size: 1.1rem; transition: all 0.3s; }
+        .btn-cute:hover { transform: translateY(-5px); box-shadow: 0 10px 15px rgba(255, 154, 158, 0.4); color: #fff; }
+        .btn-cute-blue { background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%); }
+
+        .card-pet { border: none; border-radius: 30px; background: #ffffff; box-shadow: 0 10px 20px rgba(0,0,0,0.05); transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); overflow: hidden; border-bottom: 5px solid var(--cute-pink); }
+        .card-pet:hover { transform: translateY(-15px); box-shadow: 0 20px 40px rgba(255,154,158,0.3); }
+        .card-pet img { height: 280px; object-fit: cover; border-bottom: 3px dashed var(--cute-blue); }
+        
+        .badge-cute { background-color: var(--cute-blue); color: white; padding: 5px 15px; border-radius: 20px; font-weight: bold; }
+
+        footer { background: var(--cute-blue); color: white; border-top-left-radius: 50px; border-top-right-radius: 50px; margin-top: 50px; }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand animate__animated animate__tada" href="index.html"><i class="fas fa-cat me-2"></i>Patitas Felices</a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="fas fa-paw" style="color: #ff9a9e; font-size: 1.5rem;"></i>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="servicios.html">Mimos y Cuidados</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="adopciones.html">Amigos Peludos</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Título Principal -->
+    <div class="container text-center py-5 animate__animated animate__zoomIn">
+        <h1 style="color: #ff9a9e; font-size: 3rem;">Encuentra a tu Media Naranja ❤️</h1>
+        <p class="lead text-muted">Ellos están listos para llenarte de besos y aventuras.</p>
+    </div>
+
+    <!-- Lista de Mascotas -->
+    <div class="container pb-5">
+        <div class="row g-4">
+            <!-- Mascota 1 -->
+            <div class="col-md-4">
+                <div class="card card-pet h-100 animate__animated animate__fadeInUp">
+                    <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Max">
+                    <div class="card-body p-4 text-center">
+                        <h3 class="h4" style="color: #5d4037;">Max</h3>
+                        <span class="badge-cute mb-3 d-inline-block">🐶 Mestizo | 1.5 años</span>
+                        <p class="text-muted">Un torbellino de alegría. Le encanta atrapar la pelota y dormir abrazado.</p>
+                        <button class="btn btn-cute mt-2 w-100" onclick="adoptarMascota('Max', '🐶')">¡Adoptar a Max!</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Mascota 2 -->
+            <div class="col-md-4">
+                <div class="card card-pet h-100 animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+                    <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Luna">
+                    <div class="card-body p-4 text-center">
+                        <h3 class="h4" style="color: #5d4037;">Luna</h3>
+                        <span class="badge-cute mb-3 d-inline-block" style="background-color: #ff9a9e;">🐱 Felina | 8 meses</span>
+                        <p class="text-muted">Señorita elegante y ronroneadora profesional. Experta en calentar piernas.</p>
+                        <button class="btn btn-cute mt-2 w-100" onclick="adoptarMascota('Luna', '🐱')">¡Adoptar a Luna!</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Mascota 3 (Wolfy) -->
+            <div class="col-md-4">
+                <div class="card card-pet h-100 animate__animated animate__fadeInUp" style="animation-delay: 0.4s;">
+                    <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Wolfy">
+                    <div class="card-body p-4 text-center">
+                        <h3 class="h4" style="color: #5d4037;">Wolfy</h3>
+                        <span class="badge-cute mb-3 d-inline-block" style="background-color: #fcdb94; color: #5d4037;">🐺 Husky | 2 años</span>
+                        <p class="text-muted">Espíritu aventurero. El compañero de viaje perfecto para recorrer todo el Perú contigo.</p>
+                        <button class="btn btn-cute btn-cute-blue mt-2 w-100" onclick="adoptarMascota('Wolfy', '🐺')">¡Adoptar a Wolfy!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-4 text-center">
+        <div class="container mt-3">
+            <h3 class="mb-3" style="font-family: 'Fredoka One';">Patitas Felices Cusco</h3>
+            <p class="small mb-0">&copy; 2026 Proyecto Creativo Linux. Hecho con <i class="fas fa-heart text-danger"></i>.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        async function adoptarMascota(nombre, icono) {
+            const { value: formValues } = await Swal.fire({
+                title: `¡Adoptar a ${nombre}! ${icono}`,
+                html:
+                    '<p style="font-family: Nunito; font-size: 0.9rem; color: #5d4037;">Déjanos tus datos para iniciar la magia:</p>' +
+                    '<input id="swal-input1" class="swal2-input" placeholder="Tu nombre y apellido">' +
+                    '<input id="swal-input2" class="swal2-input" placeholder="Teléfono de contacto">',
+                focusConfirm: false,
+                confirmButtonText: 'Enviar Solicitud ✨',
+                confirmButtonColor: '#a1c4fd',
+                showCancelButton: true,
+                cancelButtonText: 'Cancelar',
+                cancelButtonColor: '#ff9a9e',
+                background: '#fff9f9',
+                preConfirm: () => {
+                    return [
+                        document.getElementById('swal-input1').value,
+                        document.getElementById('swal-input2').value
+                    ]
+                }
+            });
+
+            if (formValues && formValues[0]) {
+                Swal.fire({
+                    title: '¡Felicidades!',
+                    text: `Nos pondremos en contacto contigo pronto. ¡${nombre} ya mueve la cola de la emoción!`,
+                    icon: 'success',
+                    iconColor: '#ff9a9e',
+                    confirmButtonColor: '#a1c4fd',
+                    background: '#fff9f9'
+                });
+            }
+        }
+    </script>
+</body>
+</html>

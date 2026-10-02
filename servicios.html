@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios - Patitas Felices 🐾</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --cute-pink: #ff9a9e;
+            --cute-rose: #fecfef;
+            --cute-blue: #a1c4fd;
+            --text-dark: #5d4037;
+        }
+        body { font-family: 'Nunito', sans-serif; background-color: #fff9f9; color: var(--text-dark); padding-top: 100px; }
+        h1, h2, h3, h4, .navbar-brand { font-family: 'Fredoka One', cursive; letter-spacing: 1px; }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); }
+            100% { transform: translateY(0px); }
+        }
+        .floating-card { animation: float 4s ease-in-out infinite; }
+        .floating-card:nth-child(2) { animation-delay: 1.5s; }
+        .floating-card:nth-child(3) { animation-delay: 3s; }
+
+        .navbar-custom { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); border-bottom: 3px dashed var(--cute-pink); transition: all 0.4s ease; }
+        .navbar-custom .navbar-brand { color: #ff7eb3 !important; font-size: 1.8rem; text-shadow: 2px 2px 0px var(--cute-rose); }
+        .navbar-custom .nav-link { color: var(--text-dark) !important; font-weight: 700; margin: 0 8px; border-radius: 20px; transition: all 0.3s; }
+        .navbar-custom .nav-link:hover, .navbar-custom .nav-link.active { background-color: var(--cute-blue); color: white !important; transform: scale(1.1) rotate(-3deg); }
+
+        .btn-cute { background: linear-gradient(45deg, #ff9a9e 0%, #fecfef 100%); color: var(--text-dark); border: none; border-radius: 30px; padding: 10px 25px; font-family: 'Fredoka One', cursive; font-size: 1.1rem; transition: all 0.3s; }
+        .btn-cute:hover { transform: translateY(-5px); box-shadow: 0 10px 15px rgba(255, 154, 158, 0.4); color: #fff; }
+
+        .card-service { border: none; border-radius: 30px; background: #ffffff; box-shadow: 0 10px 20px rgba(0,0,0,0.05); overflow: hidden; border-bottom: 5px solid var(--cute-blue); }
+        .card-service img { border-bottom: 3px dashed var(--cute-rose); height: 220px; object-fit: cover; }
+        
+        footer { background: var(--cute-blue); color: white; border-top-left-radius: 50px; border-top-right-radius: 50px; margin-top: 50px; }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand animate__animated animate__tada" href="index.html"><i class="fas fa-cat me-2"></i>Patitas Felices</a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="fas fa-paw" style="color: #ff9a9e; font-size: 1.5rem;"></i>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="servicios.html">Mimos y Cuidados</a></li>
+                    <li class="nav-item"><a class="nav-link" href="adopciones.html">Amigos Peludos</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Título Principal -->
+    <div class="container text-center py-5 animate__animated animate__fadeInDown">
+        <h1 style="color: #a1c4fd; font-size: 3rem;">Nuestro Spa y Clínica ✨</h1>
+        <p class="lead text-muted">Todo lo que necesitas para consentir a los reyes de la casa.</p>
+    </div>
+
+    <!-- Tarjetas de Servicios -->
+    <div class="container pb-5">
+        <div class="row g-4">
+            <div class="col-md-4 floating-card">
+                <div class="card card-service h-100">
+                    <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Veterinaria">
+                    <div class="card-body text-center p-4">
+                        <h3 class="h4" style="color: #ff9a9e;">Clínica Mágica</h3>
+                        <p class="text-muted">Chequeos generales, vacunas con premio y doctores que hablan el idioma "guau" y "miau".</p>
+                        <button class="btn btn-cute mt-2" onclick="reservarCita('Clínica Mágica')">Reservar Cita</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 floating-card">
+                <div class="card card-service h-100">
+                    <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Estética">
+                    <div class="card-body text-center p-4">
+                        <h3 class="h4" style="color: #a1c4fd;">Spa de Burbujas</h3>
+                        <p class="text-muted">Baños relajantes, cortes con mucho estilo y masajitos para quitar el estrés de perseguir su cola.</p>
+                        <button class="btn btn-cute mt-2" onclick="reservarCita('Spa de Burbujas')">Reservar Cita</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 floating-card">
+                <div class="card card-service h-100">
+                    <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Hotel">
+                    <div class="card-body text-center p-4">
+                        <h3 class="h4" style="color: #fcdb94;">Hotel 5 Huellas</h3>
+                        <p class="text-muted">Un lugar lleno de juguetes y amigos para que se diviertan a lo grande mientras tú viajas.</p>
+                        <button class="btn btn-cute mt-2" onclick="reservarCita('Hotel 5 Huellas')">Reservar Cita</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-4 text-center">
+        <div class="container mt-3">
+            <h3 class="mb-3" style="font-family: 'Fredoka One';">Patitas Felices Cusco</h3>
+            <p class="small mb-0">&copy; 2026 Proyecto Creativo Linux. Hecho con <i class="fas fa-heart text-danger"></i>.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        function reservarCita(servicio) {
+            Swal.fire({
+                title: '¡Excelente elección!',
+                text: `¿Deseas agendar un turno para ${servicio}?`,
+                icon: 'question',
+                iconColor: '#ff9a9e',
+                showCancelButton: true,
+                confirmButtonColor: '#a1c4fd',
+                cancelButtonColor: '#ff9a9e',
+                confirmButtonText: 'Sí, agendar',
+                cancelButtonText: 'Ahora no',
+                background: '#fff9f9'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire({ title: '¡Agendado!', text: 'Nos contactaremos contigo pronto. ¡Tu peludo estará feliz!', icon: 'success', iconColor: '#a1c4fd', confirmButtonColor: '#a1c4fd' });
+                }
+            })
+        }
+    </script>
+</body>
+</html>
